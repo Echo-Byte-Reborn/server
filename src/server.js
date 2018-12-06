@@ -1,8 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
-import Task from './models/exampleModel'
-import routes from './routes/exampleRoutes'
+import Localisation from './models/localisationModel'
+import routes from './routes/localisationRoutes'
 
 require('dotenv').config()
 
@@ -11,7 +11,7 @@ const port = process.env.PORT || 4000
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://localhost/SeulSurNamibTest', { useNewUrlParser: true }); 
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
