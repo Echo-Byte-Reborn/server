@@ -3,8 +3,10 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import Localisation from './models/localisationModel'
 import Bpm from './models/bpmModel'
+import Chute from './models/chuteModel'
 import localisationRoutes from './routes/localisationRoutes'
 import bpmRoutes from './routes/bpmRoutes'
+import chuteRoutes from './routes/chuteRoutes'
 
 require('dotenv').config()
 
@@ -20,6 +22,7 @@ app.use(bodyParser.json())
 
 localisationRoutes(app)
 bpmRoutes(app)
+chuteRoutes(app)
 
 app.get('/', (req, res) =>  {
   res.send('Hello World !!')
