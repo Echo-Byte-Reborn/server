@@ -18,7 +18,7 @@ exports.createLocalisation = (req, res) => {
   const body = req.body
 
   if (body && Object.keys(body).length === 2 && body.longitude && body.latitude) {
-    const newLocalisation = new Localisation(req.body)
+    const newLocalisation = new Localisation(body)
     newLocalisation.save((err, localisation) => {
       if (err) {
         res.status(500).send(err)

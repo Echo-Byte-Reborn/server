@@ -2,7 +2,9 @@ import express from 'express';
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import Localisation from './models/localisationModel'
-import routes from './routes/localisationRoutes'
+import Bpm from './models/bpmModel'
+import localisationRoutes from './routes/localisationRoutes'
+import bpmRoutes from './routes/bpmRoutes'
 
 require('dotenv').config()
 
@@ -16,7 +18,8 @@ mongoose.connect('mongodb://localhost/SeulSurNamibTest', { useNewUrlParser: true
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-routes(app)
+localisationRoutes(app)
+bpmRoutes(app)
 
 app.get('/', (req, res) =>  {
   res.send('Hello World !!')
