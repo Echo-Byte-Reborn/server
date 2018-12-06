@@ -24,8 +24,8 @@ localisationRoutes(app)
 bpmRoutes(app)
 chuteRoutes(app)
 
-app.get('/', (req, res) =>  {
-  res.send('Hello World !!')
+app.get('/', (req, res) => {
+  res.status(200).send({ message: 'L\'API de Seul sur Namib est en service.' })
 })
 
 app.listen(port, () => {
