@@ -5,6 +5,9 @@ import mongoose from 'mongoose'
 const Chute = mongoose.model('Chute')
 
 exports.listAllChutes = function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+
   Chute.find({}, function(err, chutes) {
     if (err) {
       res.status(500).send(err)
@@ -15,6 +18,9 @@ exports.listAllChutes = function(req, res) {
 }
 
 exports.createChute = (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+
   const body = req.body
 
   if (body && Object.keys(body).length === 3 && body.x && body.y && body.z) {

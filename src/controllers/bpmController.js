@@ -5,6 +5,9 @@ import mongoose from 'mongoose'
 const Bpm = mongoose.model('Bpm')
 
 exports.listAllBpms = function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+
   Bpm.find({}, function(err, bpms) {
     if (err) {
       res.status(500).send(err)
@@ -15,6 +18,9 @@ exports.listAllBpms = function(req, res) {
 }
 
 exports.createBpm = (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+
   const body = req.body
 
   if (body && Object.keys(body).length === 1 && body.value) {
