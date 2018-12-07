@@ -17,7 +17,7 @@ const port = process.env.PORT || 4000
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/SeulSurNamibTest', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://localhost/SeulSurNamibTest2', { useNewUrlParser: true }); 
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
