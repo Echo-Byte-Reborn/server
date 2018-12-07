@@ -38,6 +38,9 @@ exports.createBpm = (req, res) => {
 }
 
 exports.lastBpm = (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+
   Bpm.find({}, function(err, bpms) {
     if (err) {
       res.status(500).send(err)
