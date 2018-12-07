@@ -10,7 +10,7 @@ exports.listAllMessages = function(req, res) {
       res.status(500).send(err)
     }
 
-    res.status(200).json(messages)
+    res.status(200).json({ data: messages })
   })
 }
 
