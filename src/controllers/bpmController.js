@@ -30,3 +30,18 @@ exports.createBpm = (req, res) => {
     res.status(400).json({ message: 'Invalid params !' })
   }
 }
+
+exports.lastBpm = (req, res) => {
+  Bpm.find({}, function(err, bpms) {
+    if (err) {
+      res.status(500).send(err)
+    }
+    let bpm = bpms
+
+    if (bpms.length > 0) {
+      bpm = bpms[bpms.length - 1]
+    }
+
+    res.status(200).json(bpm)
+  })
+}
